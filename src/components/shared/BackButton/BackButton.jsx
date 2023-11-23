@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useHistory } from 'react-router';
 import { BackWrapper } from './style';
 import { IonIcon } from '@ionic/react';
@@ -6,7 +7,7 @@ import { arrowBackOutline, logoOctocat } from 'ionicons/icons';
 const BackButton = ({ arrow = false }) => {
 	const history = useHistory();
 
-	const navigate = (redirect: string) => {
+	const navigate = (redirect) => {
 		history.push(redirect);
 	};
 

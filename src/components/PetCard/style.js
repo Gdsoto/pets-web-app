@@ -12,6 +12,9 @@ export const CardWrapper = styled.section`
 	flex-direction: column;
 
 	picture img {
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
 		border-radius: 8px 8px 0 0;
 	}
 

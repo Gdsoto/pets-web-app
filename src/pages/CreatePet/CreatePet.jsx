@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { INITIAL_VALUES, PetValidations } from './util';
@@ -10,7 +11,6 @@ import PetsApi from '../../services/api';
 import { toast } from 'react-hot-toast';
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
 import BottomNav from '../../components/BottomNav/BottomNav';
 import PageLayout from '../../components/Layout/PageLayout';
 import CustomSelect from '../../components/shared/FormComponents/Select/Select';
@@ -19,7 +19,7 @@ import { changeIdToLabel } from '../../utils/functions';
 import Files from 'react-files';
 
 const CreatePet = () => {
-	const { roles } = useSelector((state: RootState) => state.login);
+	const { roles } = useSelector((state) => state.login);
 	const history = useHistory();
 
 	const [files, setFiles] = useState([]);
@@ -79,6 +79,7 @@ const CreatePet = () => {
 		setValue('files', files);
 	};
 
+	// eslint-disable-next-line no-unused-vars
 	const handleError = (error, file) => {
 		console.log('error code ' + error.code + ': ' + error.message);
 		toast.error('error al procesar la imagen');

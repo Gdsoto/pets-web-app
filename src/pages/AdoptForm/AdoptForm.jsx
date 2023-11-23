@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { INITIAL_VALUES, AdoptValidations } from './util';
@@ -10,13 +11,12 @@ import PetsApi from '../../services/api';
 import { toast } from 'react-hot-toast';
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
 import BottomNav from '../../components/BottomNav/BottomNav';
 import PageLayout from '../../components/Layout/PageLayout';
 
 const AdoptForm = ({ match }) => {
 	const petId = match.params.id;
-	const { id } = useSelector((state: RootState) => state.login);
+	const { id } = useSelector((state) => state.login);
 	const history = useHistory();
 
 	const {
@@ -30,7 +30,7 @@ const AdoptForm = ({ match }) => {
 	});
 
 	const onSubmit = (data) => {
-		PetsApi.post('/api/application/create', {
+		PetsApi.post('/application/create', {
 			person: { id },
 			pet: { id: petId },
 			document: data?.document,

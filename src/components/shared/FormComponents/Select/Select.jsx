@@ -1,23 +1,7 @@
+/* eslint-disable react/prop-types */
 import { MenuItem, TextField } from '@mui/material';
-import { Controller, UseFormSetValue } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import { SelectWrapper } from './style';
-
-interface Props {
-	label?: string;
-	errors: object;
-	nameValue: string;
-	options?: {
-		value: string;
-		label: string;
-	}[];
-	control?: any;
-	placeHolder?: string;
-	disabled?: boolean;
-	name?: string;
-	id?: string;
-	multiline?: boolean;
-	setValue: UseFormSetValue<any>;
-}
 
 const CustomSelect = ({
 	id,
@@ -27,7 +11,7 @@ const CustomSelect = ({
 	control,
 	nameValue,
 	options,
-}: Props) => {
+}) => {
 	return (
 		<SelectWrapper>
 			<Controller

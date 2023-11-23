@@ -6,7 +6,7 @@ export const ListWrapper = styled.section`
 	font-family: 'Rubik', sans-serif;
 	box-sizing: border-box;
 	color: ${GRAY_500};
-	margin-bottom: 90px;
+	margin-bottom: 150px;
 
 	.loader-wrap {
 		width: 100%;
@@ -33,7 +33,7 @@ export const ListWrapper = styled.section`
 
 	.detail-wrap {
 		background-color: ${WHITE};
-		width: 100%;
+		max-width: 100%;
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
@@ -41,18 +41,22 @@ export const ListWrapper = styled.section`
 		box-shadow: 0px 0px 1px rgba(48, 49, 51, 0.05),
 			0px 4px 8px rgba(48, 49, 51, 0.1);
 		border-radius: 8px;
-		margin-bottom: 12px;
+		margin-bottom: 90px;
+	}
+
+	.space {
+		margin-bottom: 20px;
 	}
 
 	.text {
 		font-size: 14px;
-		margin-bottom: 12px;
+		margin-bottom: 10px;
 	}
 
 	.title {
 		font-size: 16px;
 		font-weight: 700;
-		margin-bottom: 12px;
+		margin-bottom: 10px;
 
 		ion-icon {
 			width: 16px;

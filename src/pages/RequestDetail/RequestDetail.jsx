@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Main, Title } from '../../components/shared/Main/Main';
 import BackButton from '../../components/shared/BackButton/BackButton';
 import { useEffect, useState } from 'react';
@@ -17,44 +18,12 @@ import {
 } from 'ionicons/icons';
 import PetsApi from '../../services/api';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
-import {
-	Alert,
-	Chip,
-	Divider,
-	MenuItem,
-	Select,
-	SelectChangeEvent,
-} from '@mui/material';
+import { Alert, Chip, Divider, MenuItem, Select } from '@mui/material';
 import PageLayout from '../../components/Layout/PageLayout';
 import BottomNav from '../../components/BottomNav/BottomNav';
 import { Button, OutlineButton } from '../../components/shared/Button/Button';
 import { useHistory } from 'react-router';
 import { toast } from 'react-hot-toast';
-
-interface Iaplication {
-	status: string;
-	address: string;
-	adoptionMotivation: string;
-	alternativePhone: string;
-	document: string;
-	pet: {
-		name: string;
-		type: {
-			name: string;
-		};
-		sex: string;
-		race: {
-			name: string;
-		};
-		age: number;
-	};
-	person: {
-		firtsName: string;
-		lastName: string;
-		phone: string;
-	};
-}
 
 const RequestDetail = ({ match }) => {
 	const history = useHistory();
@@ -97,9 +66,9 @@ const RequestDetail = ({ match }) => {
 	};
 
 	const applicationId = match.params.id;
-	const { roles } = useSelector((state: RootState) => state.login);
+	const { roles } = useSelector((state) => state.login);
 	const [isLoading, setIsLoading] = useState(false);
-	const [application, setApplication] = useState<Iaplication>({
+	const [application, setApplication] = useState({
 		status: 'PENDING',
 		address: '',
 		adoptionMotivation: '',
@@ -124,7 +93,7 @@ const RequestDetail = ({ match }) => {
 	});
 	const [status, setStatus] = useState(statusData[application.status].value);
 
-	const handleChange = (event: SelectChangeEvent) => {
+	const handleChange = (event) => {
 		setStatus(event.target.value);
 	};
 

@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const PetsApi = axios.create({
-	baseURL: 'http://172.21.34.12:19994',
-	withCredentials: true,
+	baseURL: 'http://186.155.151.14:19994/api',
 });
 
 export default PetsApi;

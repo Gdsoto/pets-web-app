@@ -32,17 +32,12 @@ const Login = () => {
 	});
 
 	const onSubmit = (data) => {
-		PetsApi.post(`/user/login`, {
-			email: 'steven2088@hotmail.es',
-			password: '1023933105',
-		})
+		PetsApi.get(`/person/get/${data?.password}/${data?.email}`)
 			.then((res) => {
-				console.log(res);
-
-				/* toast.success('Bienvenido!');
+				toast.success('Bienvenido!');
 				dispatch(changeLogState(true));
 				dispatch(updateLoginState(res?.data?.persons));
-				history.push(`/dash`); */
+				history.push(`/dash`);
 			})
 			.catch((error) => {
 				toast.error('Usuario o contraseña incorrecta');
@@ -50,45 +45,9 @@ const Login = () => {
 			});
 	};
 
-	PetsApi.get(`/api/user/get`, {
-		headers: {
-			Authorization: `Bearer ${'eyJhbGciOiJIUzUxMiJ9.eyJwZXJtaXNzaW9ucyI6Ilt7XCJhdXRob3JpdHlcIjpcIlJPTEVfYWRvcHRpb25DZW50ZXJcIn1dIiwiaWQiOiJiYmRiZDFlYy1mYzRlLTQ1ZWQtYTQ1My0xYzZlMDUwNWRkNjQiLCJzdWIiOiJiYmRiZDFlYy1mYzRlLTQ1ZWQtYTQ1My0xYzZlMDUwNWRkNjQiLCJpYXQiOjE3MDA2ODA2MTUsImV4cCI6MTcwMDY4NDIxNX0.4ujgF6OFGXvUfxGp4O3By5UKr-1U9WGOReCkfS8UxobLmZ8PtaBOZdjcOaoTJSvY-QJfsgHcP08tXAI_CENVfg'}`,
-		},
-	})
-		.then((res) => {
-			console.log(res);
-
-			/* toast.success('Bienvenido!');
-			dispatch(changeLogState(true));
-			dispatch(updateLoginState(res?.data?.persons));
-			history.push(`/dash`); */
-		})
-		.catch((error) => {
-			toast.error('Usuario o contraseña incorrecta');
-			console.log(error);
-		});
-
-	PetsApi.get(`/api/utils/getLocations`)
-		.then((res) => {
-			console.log(res);
-
-			/* toast.success('Bienvenido!');
-			dispatch(changeLogState(true));
-			dispatch(updateLoginState(res?.data?.persons));
-			history.push(`/dash`); */
-		})
-		.catch((error) => {
-			toast.error('Usuario o contraseña incorrecta');
-			console.log(error);
-		});
-
 	const goToRegister = () => {
 		history.push('/register');
 	};
-
-	/* fetch('http://186.155.151.14:19994/api/utils/getLocations').then((res) =>
-		console.log(res)
-	); */
 
 	return (
 		<Main>

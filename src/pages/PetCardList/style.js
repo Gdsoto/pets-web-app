@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { GRAY_200 } from '../../utils/constants';
 
 export const ListWrapper = styled.section`
-	margin-bottom: 90px;
+	margin-bottom: 150px;
 
 	.loader-wrap {
 		width: 100%;

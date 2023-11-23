@@ -13,32 +13,15 @@ import {
 } from 'ionicons/icons';
 import PetsApi from '../../services/api';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
 import { Button } from '../../components/shared/Button/Button';
-import { Alert, Card, CardActions, CardContent } from '@mui/material';
+import { Alert } from '@mui/material';
 import { useHistory } from 'react-router';
-
-interface Iaplications {
-	application: [
-		{
-			id: number;
-			status: string;
-			pet: {
-				name: string;
-				age: string;
-			};
-			person: {
-				firtsName: string;
-				lastName: string;
-			};
-		}
-	];
-}
 
 const Requests = () => {
 	const history = useHistory();
-	const { id, roles } = useSelector((state: RootState) => state.login);
-	const [applications, setApplications] = useState<Iaplications>({
+	const { id, roles } = useSelector((state) => state.login);
+	const [error, setError] = useState(true);
+	const [applications, setApplications] = useState({
 		application: [
 			{
 				id: 0,
@@ -153,6 +136,7 @@ const Requests = () => {
 					aplications = data;
 				}
 
+				setError(false);
 				setApplications(aplications);
 			} catch (error) {
 				console.log(error);
@@ -173,6 +157,13 @@ const Requests = () => {
 					<FormWrap>
 						<div className="loader-wrap">
 							<Loader />
+						</div>
+					</FormWrap>
+				) : error ? (
+					<FormWrap>
+						<div className="not-found">
+							<IonIcon icon={earthOutline}></IonIcon>
+							<p>No se encontraron solicitudes.</p>
 						</div>
 					</FormWrap>
 				) : (

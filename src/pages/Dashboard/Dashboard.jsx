@@ -1,17 +1,16 @@
+/* eslint-disable react/prop-types */
 import { DashWrapper } from './style';
 import { IonIcon } from '@ionic/react';
 import { logOutOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router';
 import { changeLogState } from '../../context/slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
 import { useEffect, useState } from 'react';
 import PetsApi from '../../services/api';
-import { Fab } from '@mui/material';
 
 const Dashboard = () => {
-	const loginData = useSelector((state: RootState) => state.login);
-	const { roles } = useSelector((state: RootState) => state.login);
+	const loginData = useSelector((state) => state.login);
+	const { roles } = useSelector((state) => state.login);
 	const dispatch = useDispatch();
 	const history = useHistory();
 	const [data, setData] = useState({

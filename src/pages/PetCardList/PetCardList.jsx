@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Main, Title } from '../../components/shared/Main/Main';
 import BackButton from '../../components/shared/BackButton/BackButton';
 import { useEffect, useState } from 'react';
@@ -9,12 +10,11 @@ import { IonIcon } from '@ionic/react';
 import { addOutline, earthOutline } from 'ionicons/icons';
 import PetsApi from '../../services/api';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
 import { useHistory } from 'react-router';
 
 const PetCardList = () => {
 	const history = useHistory();
-	const { roles } = useSelector((state: RootState) => state.login);
+	const { roles } = useSelector((state) => state.login);
 	const [pets, setPets] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 

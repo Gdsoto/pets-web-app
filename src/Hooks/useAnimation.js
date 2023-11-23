@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useAnimation = (time: number) => {
+const useAnimation = (time) => {
 	const [animation, setAnimation] = useState(true);
 
 	useEffect(() => {

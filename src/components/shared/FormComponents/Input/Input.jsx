@@ -1,25 +1,10 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 
 // Libs
 import { Controller } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
-import { ReactElement } from 'react';
-import { InputWrapper } from './style';
 
-interface Props {
-	label?: string;
-	errors: object;
-	nameValue: string;
-	options?: [];
-	control?: any;
-	placeHolder?: string;
-	disabled?: boolean;
-	icon?: ReactElement;
-	name?: string;
-	type: string;
-	id?: string;
-	multiline?: boolean;
-}
+import { InputWrapper } from './style';
 
 const Input = ({
 	id,
@@ -31,7 +16,7 @@ const Input = ({
 	placeHolder,
 	disabled,
 	multiline = false,
-}: Props) => {
+}) => {
 	return (
 		<InputWrapper>
 			<Controller

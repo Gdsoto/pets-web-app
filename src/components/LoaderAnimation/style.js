@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { PINK_500 } from '../../utils/constants';
 
 // ANIMATION LINK: https://codepen.io/gamjachip/pen/GQPEvP
 export const LoaderWrapper = styled.section`

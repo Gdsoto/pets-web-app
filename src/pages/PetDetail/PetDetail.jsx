@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Main, Title } from '../../components/shared/Main/Main';
 import BackButton from '../../components/shared/BackButton/BackButton';
 import { useEffect, useState } from 'react';
@@ -21,32 +22,13 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import { Button } from '../../components/shared/Button/Button';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
 import { useHistory } from 'react-router';
-
-export interface Ipet {
-	name: string;
-	img: Iresources[];
-	description: string;
-	type: {
-		name: string;
-	};
-	race: {
-		name: string;
-	};
-	sex: string;
-	age: string;
-}
-
-export interface Iresources {
-	url: string;
-}
 
 const PetCardList = ({ match }) => {
 	const history = useHistory();
-	const { roles } = useSelector((state: RootState) => state.login);
+	const { roles } = useSelector((state) => state.login);
 	const petId = match.params.id;
-	const [pet, setPet] = useState<Ipet>({
+	const [pet, setPet] = useState({
 		name: '',
 		img: [],
 		description: '',

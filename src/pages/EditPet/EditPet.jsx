@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from '../../components/shared/Button/Button';
@@ -9,7 +10,6 @@ import PetsApi from '../../services/api';
 import { toast } from 'react-hot-toast';
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
 import BottomNav from '../../components/BottomNav/BottomNav';
 import PageLayout from '../../components/Layout/PageLayout';
 import CustomSelect from '../../components/shared/FormComponents/Select/Select';
@@ -20,7 +20,7 @@ import { INITIAL_VALUES, PetValidations } from './util';
 
 const EditPet = ({ match }) => {
 	const petId = match.params.id;
-	const { roles } = useSelector((state: RootState) => state.login);
+	const { roles } = useSelector((state) => state.login);
 	const history = useHistory();
 
 	const [isLoading, setIsLoading] = useState(false);
@@ -63,7 +63,7 @@ const EditPet = ({ match }) => {
 		}
 	};
 
-	const getObjectID = (data, name: string): number | undefined => {
+	const getObjectID = (data, name) => {
 		const animal = data.find((item) => item.label === name);
 		return animal?.value;
 	};

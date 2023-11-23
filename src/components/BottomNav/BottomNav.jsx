@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { NavWrapper } from './style';
 import { IonIcon } from '@ionic/react';
 import { appsOutline, logoOctocat, documentsOutline } from 'ionicons/icons';
@@ -6,7 +7,7 @@ import { useHistory } from 'react-router';
 const BottomNav = ({ role = ['USER'] }) => {
 	const history = useHistory();
 
-	const navigate = (redirect: string) => {
+	const navigate = (redirect) => {
 		history.push(redirect);
 	};
 

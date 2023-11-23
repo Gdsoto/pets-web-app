@@ -1,21 +1,14 @@
 import styled from 'styled-components';
-import {
-	GRAY_200,
-	GRAY_500,
-	PINK_300,
-	PINK_500,
-	WHITE,
-} from '../../utils/constants';
+import { GRAY_200, GRAY_500, PINK_500, WHITE } from '../../utils/constants';
 
 export const DashWrapper = styled.section`
 	@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
+	margin-bottom: 150px;
 
 	font-family: 'Rubik', sans-serif;
-	min-height: 100vh;
-	background-color: ${PINK_500};
 
 	p {
 		margin: 0;
@@ -68,7 +61,7 @@ export const DashWrapper = styled.section`
 		}
 
 		.adopt {
-			background-color: ${PINK_300};
+			background-color: ${PINK_500};
 			grid-column: 1 / 3;
 			padding: 16px;
 		}

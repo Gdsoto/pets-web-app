@@ -1,14 +1,13 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import { CardWrapper } from './style';
 import { Fab } from '@mui/material';
 import { IonIcon } from '@ionic/react';
 import { eyeOutline, heartSharp } from 'ionicons/icons';
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../context/store';
 
 const PetCard = ({ pet }) => {
-	const { roles } = useSelector((state: RootState) => state.login);
+	const { roles } = useSelector((state) => state.login);
 	const history = useHistory();
 
 	const onClick = () => {

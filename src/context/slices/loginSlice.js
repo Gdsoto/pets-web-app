@@ -1,15 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface LoginState {
-	id: number;
-	roles: string[];
-	firtsName: string;
-	secondName: string;
-	lastName: string;
-}
-
-const initialState: LoginState = {
+const initialState = {
 	roles: [],
 	id: 0,
 	firtsName: '',
@@ -21,7 +12,7 @@ export const loginSlice = createSlice({
 	name: 'login',
 	initialState,
 	reducers: {
-		updateLoginState: (state, action: PayloadAction<LoginState>) => {
+		updateLoginState: (state, action) => {
 			state.id = action.payload.id;
 			state.roles = action.payload.roles;
 			state.firtsName = action.payload.firtsName;
